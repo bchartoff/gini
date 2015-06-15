@@ -1,0 +1,319 @@
+<html>
+<head>
+	<style>
+		#graphic{
+			width: 500px;
+			height: 500px;
+		}
+		.bar1, .bar6, .bar7, .bar9, .bar12, .bar16{
+			fill: #b0d5f1;
+		}
+		.bar2, .bar8, .bar10, .bar13, .bar17{
+			fill: #82c4e9;
+		}
+		.bar3, .bar11, .bar14, .bar18{
+			fill: #1696d2;
+		}
+		.bar4, .bar15, .bar19{
+			fill: #00578b;
+		}
+		.bar5, .bar20{
+			fill: #000000;
+		}
+		.dot{
+			fill: red;
+			stroke: none;
+		}
+		.line1{
+			fill: none;
+			stroke: black;
+		}
+		polygon{
+			fill: red;
+		}
+		.click{
+			font-family: Arial;
+			font-size: 40px;
+			cursor: pointer;
+		}
+	</style>
+</head>
+<body>
+<script src = "https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.js"></script>
+<div id = "graphic"></div>
+<script type="text/javascript">
+var graphic = d3.select("#graphic")
+	.append("svg")
+	.attr("width",1200)
+	.attr("height", 500)
+
+graphic.append("text")
+.attr("class","click")
+.attr("x", 600)
+.attr("y",200)
+.text("Click me!")
+graphic.append("rect")
+	.attr("class","bar1")
+	.attr("x",0)
+	.attr("y",475)
+	.attr("width",100)
+	.attr("height",25);
+graphic.append("rect")
+	.attr("class","bar2")
+	.attr("x",100)
+	.attr("y",450)
+	.attr("width",100)
+	.attr("height",50);
+graphic.append("rect")
+	.attr("class","bar3")
+	.attr("x",200)
+	.attr("y",425)
+	.attr("width",100)
+	.attr("height",75);
+graphic.append("rect")
+	.attr("class","bar4")
+	.attr("x",300)
+	.attr("y",400)
+	.attr("width",100)
+	.attr("height",100);
+graphic.append("rect")
+	.attr("class","bar5")
+	.attr("x",400)
+	.attr("y",250)
+	.attr("width",100)
+	.attr("height",250);
+
+graphic.append("rect")
+	.attr("class","bar6")
+	.attr("x",0)
+	.attr("y",475)
+	.attr("width",100)
+	.attr("height",25);
+
+
+
+graphic.append("rect")
+	.attr("class","bar7")
+	.attr("x",0)
+	.attr("y",475)
+	.attr("width",100)
+	.attr("height",25);
+graphic.append("rect")
+	.attr("class","bar8")
+	.attr("x",100)
+	.attr("y",450)
+	.attr("width",100)
+	.attr("height",50);
+
+
+graphic.append("rect")
+	.attr("class","bar9")
+	.attr("x",0)
+	.attr("y",475)
+	.attr("width",100)
+	.attr("height",25);
+graphic.append("rect")
+	.attr("class","bar10")
+	.attr("x",100)
+	.attr("y",450)
+	.attr("width",100)
+	.attr("height",50);
+graphic.append("rect")
+	.attr("class","bar11")
+	.attr("x",200)
+	.attr("y",425)
+	.attr("width",100)
+	.attr("height",75);
+
+
+graphic.append("rect")
+	.attr("class","bar12")
+	.attr("x",0)
+	.attr("y",475)
+	.attr("width",100)
+	.attr("height",25);
+graphic.append("rect")
+	.attr("class","bar13")
+	.attr("x",100)
+	.attr("y",450)
+	.attr("width",100)
+	.attr("height",50);
+graphic.append("rect")
+	.attr("class","bar14")
+	.attr("x",200)
+	.attr("y",425)
+	.attr("width",100)
+	.attr("height",75);
+graphic.append("rect")
+	.attr("class","bar15")
+	.attr("x",300)
+	.attr("y",400)
+	.attr("width",100)
+	.attr("height",100);
+
+graphic.append("rect")
+	.attr("class","bar16")
+	.attr("x",0)
+	.attr("y",475)
+	.attr("width",100)
+	.attr("height",25);
+graphic.append("rect")
+	.attr("class","bar17")
+	.attr("x",100)
+	.attr("y",450)
+	.attr("width",100)
+	.attr("height",50);
+graphic.append("rect")
+	.attr("class","bar18")
+	.attr("x",200)
+	.attr("y",425)
+	.attr("width",100)
+	.attr("height",75);
+graphic.append("rect")
+	.attr("class","bar19")
+	.attr("x",300)
+	.attr("y",400)
+	.attr("width",100)
+	.attr("height",100);
+graphic.append("rect")
+	.attr("class","bar20")
+	.attr("x",400)
+	.attr("y",250)
+	.attr("width",100)
+	.attr("height",250);
+
+graphic.append("circle")
+	.attr("class", "dot")
+	.attr("cx", 300)
+	.attr("cy", 375)
+
+graphic.append("line")
+	.attr("class","line1")
+	.attr("y2",0)
+	.attr("y1",500)
+	.attr("x1",700)
+	.attr("x2",1200)
+
+graphic.append("polygon")
+	.attr("class","lorenz")
+	.attr("points","700,500 800,475 900,425 1000,350 1100,250 1200,0")
+	.style("opacity",0)
+
+
+graphic.on("click", function(){
+	// console.log("foo")
+	d3.select(".bar1")
+		.transition()
+.duration(1000)
+		.delay(0)
+		
+		.attr("x",700)
+
+	d3.select(".bar7")
+		.transition()
+.duration(1000)
+		.delay(1000)
+		
+		.attr("x",800)
+	d3.select(".bar8")
+		.transition()
+.duration(1000)
+		.delay(1000)
+		
+		.attr("x",800)
+		.attr("y",425)
+
+
+	d3.select(".bar9")
+		.transition()
+.duration(1000)
+		.delay(2000)
+		
+		.attr("x",900)
+	d3.select(".bar10")
+		.transition()
+.duration(1000)
+		.delay(2000)
+		
+		.attr("x",900)
+		.attr("y",425)
+	d3.select(".bar11")
+		.transition()
+.duration(1000)
+		.delay(2000)
+		
+		.attr("x",900)
+		.attr("y",350)
+
+	d3.select(".bar12")
+		.transition()
+.duration(1000)
+		.delay(3000)
+		
+		.attr("x",1000)
+	d3.select(".bar13")
+		.transition()
+.duration(1000)
+		.delay(3000)
+		
+		.attr("x",1000)
+		.attr("y",425)
+	d3.select(".bar14")
+		.transition()
+.duration(1000)
+		.delay(3000)
+		
+		.attr("x",1000)
+		.attr("y",350)
+	d3.select(".bar15")
+		.transition()
+.duration(1000)
+		.delay(3000)
+		
+		.attr("x",1000)
+		.attr("y",250)
+
+	d3.select(".bar16")
+		.transition()
+.duration(1000)
+		.delay(4000)
+		
+		.attr("x",1100)
+	d3.select(".bar17")
+		.transition()
+.duration(1000)
+		.delay(4000)
+		
+		.attr("x",1100)
+		.attr("y",425)
+	d3.select(".bar18")
+		.transition()
+.duration(1000)
+		.delay(4000)
+		
+		.attr("x",1100)
+		.attr("y",350)
+	d3.select(".bar19")
+		.transition()
+.duration(1000)
+		.delay(4000)
+		
+		.attr("x",1100)
+		.attr("y",250)
+	d3.select(".bar20")
+		.transition()
+.duration(1000)
+		.delay(4000)
+		
+		.attr("x",1100)
+		.attr("y",0)
+
+	d3.select(".lorenz")
+		.transition()
+.duration(1000)
+		.delay(5000)
+		.style("opacity",.8)
+
+
+})
+</script>
